@@ -109,9 +109,12 @@ function EventSourceWrapper() {
     setTimeout(init, options.timeout);
   }
 
-  return {
+  return { 
     addMessageListener: function (fn) {
       listeners.push(fn);
+    },
+    disconnect: function () {
+      handleDisconnect();
     },
   };
 }
